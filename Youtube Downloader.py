@@ -1,4 +1,5 @@
 from pytube import YouTube
+import os
 
 while True:
     link = input("Enter URL: ")
@@ -6,5 +7,5 @@ while True:
     stream = video.streams.filter(file_extension='mp4')
     stream = video.streams.get_highest_resolution()
     print("Скачивание началось!")
-    stream.download(output_path="C:\\Users\\Nikita\\Desktop")
+    stream.download(output_path=f"C:\\Users\\{os.getlogin()}\\Desktop")
     print("Скачивание завершено!")
